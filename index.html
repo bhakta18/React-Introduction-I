@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      function App() {
+        const username = "John Doe";
+        const currentDate = new Date().toLocaleDateString();
+
+        return (
+          <>
+            {/* React Fragment Wrapper */}
+            <div style={{
+              border: '1px solid #ddd',
+              padding: '20px',
+              borderRadius: '10px',
+              width: '300px',
+              margin: '0 auto',
+              textAlign: 'center',
+              backgroundColor: '#f9f9f9',
+              boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h1 style={{ color: '#333', fontSize: '24px' }}>Welcome, {username}!</h1>
+              <p style={{ color: '#555', marginTop: '10px' }}>Today is {currentDate}</p>
+
+              <p style={{ color: '#777', marginTop: '20px' }}>
+                Click the button below to continue:
+              </p>
+
+              <button style={{
+                padding: '10px 20px',
+                borderRadius: '5px',
+                backgroundColor: '#007BFF',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer'
+              }}>
+                Continue
+              </button>
+            </div>
+          </>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
